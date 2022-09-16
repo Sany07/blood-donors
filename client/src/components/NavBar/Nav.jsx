@@ -10,7 +10,6 @@ const Nav = () => {
             <li><NavLink to='/' href="#" className="nav-link px-3 link-secondary">Home</NavLink></li>
             <li><NavLink  to='/about' className="nav-link px-3 link-dark">About</NavLink></li>
             <li><NavLink  to='/donors' className="nav-link px-3 link-dark">Donors</NavLink></li>
-            <li><NavLink  to='' className="nav-link px-3 link-dark">Blog</NavLink></li>
             <li><NavLink  to='/contact' className="nav-link px-3 link-dark">Contact</NavLink></li>
           </ul>
           <div className="col-md-3 text-end">

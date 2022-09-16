@@ -3,12 +3,12 @@ import React from 'react';
 const MidBanner = () => {
     return (
         <>
-<section className="pt-100 pb-100 shade--bg mt-5" style={{marginTop:"1100px"}} >
+<section className="pt-100 pb-100 shade--bg my-5">
   <div className="container">
     <div className="row gy-5">
       <div className="col-lg-6">
         <div className="about-thumb">
-          <img src="https://script.viserlab.com/bloodlab/assets/images/frontend/about/60fff7dc7c1141627387868.jpg" alt="image" className="w-100 h-100" />
+          <img src="https://script.viserlab.com/bloodlab/assets/images/frontend/about/60fff7dc7c1141627387868.jpg" alt="" className="w-100 h-100" />
         </div>
       </div>
       <div className="col-lg-6 ps-lg-5">

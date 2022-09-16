@@ -7,22 +7,13 @@ const Slider = () => {
 
     const[search,setSearch] = useState()
 
-    const [donor, setDonor] = useState([]);
 
     const navigate = useNavigate();
     
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:5000/search/${search}`)
-            .then((res) => res.json())
-            .then((data) => {
-                
-                console.log(data)
-                    navigate(`/search/${search}`);
-                
-            })
+        navigate(`/search/${search}`);
         
-        return [donor, setDonor];
     }
 
     return (
