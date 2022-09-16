@@ -74,7 +74,6 @@ async function run() {
 
         app.get('/search/:slug', async (req, res) => {
             const slug = req.params.slug;
-            console.log('decodedEmail',slug);
             
             if (slug) {
                 const query = { blood: slug };
