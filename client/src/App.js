@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
@@ -12,6 +11,7 @@ import Toaster from './components/Toaster/Toaster';
 import SingleDonor from './pages/SingleDonor';
 import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
+import SearchResult from './pages/SearchResult';
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/donors" element={<Donors />} />
           <Route path="/donor/:id" element={<SingleDonor />}/>
+          <Route path="/search/:slug" element={<SearchResult />}/>
           <Route path="/contact" element={<Contact />} />
           <Route path="/apply/donor" element={<ApplyDonor />} />
           <Route path="*" element={<NotFound />} />

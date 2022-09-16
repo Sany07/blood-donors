@@ -6,6 +6,8 @@ const Card = ({ donor, id }) => {
     const navigateToProductDetail = (id) => {
       navigate(`/donor/${id}`);
     };
+
+
   return (
     <div className="p-4 md:w-1/3" key={id}>
                <div className="col">
