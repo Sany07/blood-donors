@@ -54,26 +54,26 @@ async function run() {
           });
           
         // Donors
-        app.get('/products', async (req, res) => {
+        app.get('/donors', async (req, res) => {
             const query = {};
-            const cursor = productsCollection.find();
-            const products = await cursor.toArray();
+            const donors = donorsCollection.find();
+            const products = await donors.toArray();
             res.send(products.reverse());
         });
         // GET
-        // app.get('/product/:id', async (req, res,next) => {
-        //     const id = req.params.id;
-        //     try{
-        //     const query = { _id: ObjectId(id) };
-        //     if(query){
-        //         const product = await productsCollection.findOne(query);
-        //         res.send(product);
-        //     }}catch{
-        //         res.status(404).send({ message: 'Not Found' });  
-        //     }
+        app.get('/donor/:id', async (req, res,next) => {
+            const id = req.params.id;
+            try{
+            const query = { _id: ObjectId(id) };
+            if(query){
+                const donor = await donorsCollection.findOne(query);
+                res.send(donor);
+            }}catch{
+                res.status(404).send({ message: 'Not Found' });  
+            }
 
-        //     next()
-        // });
+            next()
+        });
 
 
         // DELETE

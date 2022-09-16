@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const ApplyDonor = () => {
 
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit, reset, formState: { errors }  } = useForm();
     const addSubmit = async (data) => {
       const url = `http://localhost:5000/applyDonor`;
       try {
@@ -29,28 +29,28 @@ const ApplyDonor = () => {
       };
     return (
         <div className='container'>
+          <div className='m-5 p-5'>
             <h5 class="mb-3  fs-bold">Personal Information</h5>
-
             <form className="row g-3" onSubmit={handleSubmit(addSubmit)}>
             <div className="col-md-6">
             <label htmlFor="inputEmail4" className="form-label">Name</label>
-            <input type="text" {...register("name")} className="form-control" id="inputEmail4" />
+            <input type="text" {...register("name")} className="form-control" id="inputEmail4" required/>
             </div>
             <div className="col-md-6">
             <label htmlFor="inputEmail4" className="form-label">Email</label>
-            <input type="text" {...register("email")} className="form-control" id="inputEmail4" />
+            <input type="text" {...register("email")} className="form-control" id="inputEmail4" required/>
             </div>
             <div className="col-md-6">
             <label htmlFor="inputEmail4" className="form-label">Phone</label>
-            <input type="text" {...register("phone")} className="form-control" id="inputEmail4" />
+            <input type="text" {...register("phone")} className="form-control" id="inputEmail4" required/>
             </div>
             <div className="col-md-6">
             <label htmlFor="inputEmail4" className="form-label">City</label>
-            <input {...register("city")}  type="text" className="form-control" id="inputEmail4" />
+            <input {...register("city")}  type="text" className="form-control" id="inputEmail4" required/>
             </div>
             <div className="col-6">
             <label htmlFor="inputAddress" className="form-label">Address</label>
-            <input type="text" {...register("address")} className="form-control" id="inputAddress" placeholder="1234 Main St" />
+            <input type="text" {...register("address")} className="form-control" id="inputAddress" placeholder="1234 Main St" required/>
             </div>
             <div className="col-6">
             <label htmlFor="inputAddress2" className="form-label">Address 2</label>
@@ -70,8 +70,8 @@ const ApplyDonor = () => {
 
             <div className="col-md-6">
             <label htmlFor="inputEmail4" className="form-label">Blood Group</label>
-            <select {...register("blood")} className="form-select" aria-label="Default select example">
-                 <option selected>Open this select menu</option>
+            <select {...register("blood",{ required: true})} className="form-select" aria-label="Default select example " required>
+                 <option value=''>Open this select menu</option>
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
                 <option value="B+">B+</option>
@@ -84,8 +84,8 @@ const ApplyDonor = () => {
             </div>
             <div className="col-md-6">
             <label htmlFor="inputEmail4" className="form-label">Gender</label>
-            <select {...register("gender")} className="form-select" aria-label="Default select example">
-                 <option selected>Open this select menu</option>
+            <select {...register("gender")} className="form-select" aria-label="Default select example" required>
+                 <option value=''>Open this select menu</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
 
@@ -93,7 +93,7 @@ const ApplyDonor = () => {
             </div>
             <div className="col-md-6">
             <label htmlFor="inputEmail4" className="form-label">Age</label>
-            <input type="text" {...register("age")} className="form-control" id="inputEmail4" />
+            <input type="text" {...register("age")} className="form-control" id="inputEmail4" required/>
             </div>
 
 
@@ -101,6 +101,7 @@ const ApplyDonor = () => {
             <button type="submit" className="btn btn-danger">Apply Now</button>
             </div>
             </form>
+        </div>
         </div>
     );
 };

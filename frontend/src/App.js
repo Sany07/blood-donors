@@ -9,6 +9,7 @@ import Donors from './pages/Donors';
 import Contact from './pages/Contact';
 import ApplyDonor from './pages/ApplyDonor';
 import Toaster from './components/Toaster/Toaster';
+import SingleDonor from './pages/SingleDonor';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/donors" element={<Donors />} />
+          <Route path="/donor/:id" element={<SingleDonor />}/>
           <Route path="/contact" element={<Contact />} />
           <Route path="/apply/donor" element={<ApplyDonor />} />
         </Routes>
