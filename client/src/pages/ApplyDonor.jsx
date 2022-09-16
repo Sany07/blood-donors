@@ -7,7 +7,7 @@ const ApplyDonor = () => {
 
     const { register, handleSubmit, reset, formState: { errors }  } = useForm();
     const addSubmit = async (data) => {
-      const url = `http://localhost:5000/applyDonor`;
+      const url = `https://eblooddonor.herokuapp.com/applyDonor`;
       try {
         const { data: result } = await axios.post(url, data);
         if (result.status === 201) {

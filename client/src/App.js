@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import ApplyDonor from './pages/ApplyDonor';
 import Toaster from './components/Toaster/Toaster';
 import SingleDonor from './pages/SingleDonor';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/apply/donor" element={<ApplyDonor />} />
         </Routes>
+        <Footer/>
     </>
 
 
