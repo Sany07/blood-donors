@@ -72,7 +72,20 @@ async function run() {
             next()
         });
 
-
+        app.get('/search/:slug', async (req, res) => {
+            const slug = req.params.slug;
+            console.log('decodedEmail',slug);
+            
+            if (slug) {
+                const query = { blood: slug };
+                const cursor = donorsCollection.find(query);
+                const donors = await cursor.toArray();
+                res.send(donors);
+            }
+            else{
+                res.status(403).send({message: 'forbidden access'})
+            }
+        })
 
 
 
