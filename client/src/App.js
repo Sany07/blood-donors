@@ -11,6 +11,7 @@ import ApplyDonor from './pages/ApplyDonor';
 import Toaster from './components/Toaster/Toaster';
 import SingleDonor from './pages/SingleDonor';
 import Footer from './components/Footer';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/donor/:id" element={<SingleDonor />}/>
           <Route path="/contact" element={<Contact />} />
           <Route path="/apply/donor" element={<ApplyDonor />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer/>
     </>

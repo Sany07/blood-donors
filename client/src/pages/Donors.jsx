@@ -1,11 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Card from '../components/Card';
+import LoadingSpinner from '../components/LoadingSpinner';
 import useDonors from '../hooks/useDonors';
 
 const Donors = () => {
 
     const [donors] = useDonors();
+    
+    if (donors.length < 1) {
+      return <LoadingSpinner />;
+    }
 
     return (
         <>

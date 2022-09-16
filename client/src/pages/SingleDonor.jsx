@@ -1,10 +1,14 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import LoadingSpinner from '../components/LoadingSpinner';
 import useDonorDetail from '../hooks/useDonorDetail';
 
 const SingleDonor = () => {
     const { id } = useParams();
     const [donor, setDonor] = useDonorDetail(id);
+    if (donor.length < 1) {
+        return <LoadingSpinner />;
+      }
     return (
         <>
             <section className="inner-hero bg_img overlay--one" style={{backgroundImage: 'url("https://script.viserlab.com/bloodlab/assets/images/frontend/breadcrumb/61023f89990b81627537289.jpg")', height:"400px"}}>
