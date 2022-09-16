@@ -8,11 +8,13 @@ import Nav from './components/NavBar/Nav';
 import Donors from './pages/Donors';
 import Contact from './pages/Contact';
 import ApplyDonor from './pages/ApplyDonor';
+import Toaster from './components/Toaster/Toaster';
 
 function App() {
   return (
     <>
         <Nav/>
+        <Toaster />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/about" element={<About />} />

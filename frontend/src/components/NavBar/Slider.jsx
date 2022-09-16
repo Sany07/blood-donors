@@ -2,7 +2,7 @@ import React from 'react';
 
 const Slider = () => {
     return (
-        <div className="container-fluid">
+        <div className="container-fluid " style={{marginBottom:"200px"}}>
             <section className="hero bg_img" style={{backgroundImage: 'url(https://script.viserlab.com/bloodlab/assets/images/frontend/banner/60fffe430ffba1627389507.jpg)'}}>
             <div className="container">
                 <div className="row justify-content-center">

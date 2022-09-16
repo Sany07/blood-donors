@@ -7,27 +7,25 @@ const ApplyDonor = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const addSubmit = async (data) => {
-        const url = `https://ss-hunting.herokuapp.com/product/`;
-        try {
-          const { data: result } = await axios.post(url, data);
-          if (result.status === 201) {
-            reset();
-            toast.success(result.message, {
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              toastId: "success1",
-            });
-          }
-        } catch (error) {
-          console.log(error);
-          if (error.response.status === 401 || error.response.status === 403) {
-   
+      const url = `http://localhost:5000/applyDonor`;
+      try {
+        const { data: result } = await axios.post(url, data);
+        if (result.status === 201) {
+          reset();
+          toast.success(result.message, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            toastId: "success1",
+          });
         }
+      } catch (error) {
+        console.log(error);
+      }
       };
     return (
         <div className='container'>

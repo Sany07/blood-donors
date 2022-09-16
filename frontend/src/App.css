@@ -60,7 +60,11 @@
   opacity: 0.3;
   line-height: 1;
 }
-
+.shade--bg {
+  background: #FB3640;
+  background: -webkit-linear-gradient(to bottom, rgba(251, 54, 64, 0.15), #fff);
+  background: linear-gradient(to bottom, rgba(251, 54, 64, 0.15), #fff);
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
