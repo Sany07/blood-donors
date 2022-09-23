@@ -1,4 +1,4 @@
 # blood-donors
 
 
-<a href="https://eblooddonor.web.app/apply/donor">Live</a>
+<a href="https://eblooddonor.web.app/">Live</a>
